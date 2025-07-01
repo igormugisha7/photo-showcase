@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Photo Showcase</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      color: white;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      padding: 20px;
+    }
+
+    .grid figure {
+      margin: 0;
+      position: relative;
+    }
+
+    .grid img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .grid figcaption {
+      text-align: center;
+      margin-top: 8px;
+      font-style: italic;
+      color: #333;
+    }
+
+    .slideshow {
+      max-width: 600px;
+      margin: 40px auto;
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .slides {
+      display: flex;
+      width: 300%;
+      animation: slide 9s infinite;
+    }
+
+    .slides img {
+      width: 100%;
+      height: auto;
+    }
+
+    @keyframes slide {
+      0% { transform: translateX(0%); }
+      33% { transform: translateX(-100%); }
+      66% { transform: translateX(-200%); }
+      100% { transform: translateX(0%); }
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      color: white;
+      margin-top: 40px;
+    }
+
+    audio {
+      display: block;
+      margin: 20px auto;
+    }
+
+    @media screen and (max-width: 600px) {
+      .slides {
+        animation: slideMobile 9s infinite;
+      }
+
+      @keyframes slideMobile {
+        0% { transform: translateX(0%); }
+        33% { transform: translateX(-100%); }
+        66% { transform: translateX(-200%); }
+        100% { transform: translateX(0%); }
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Photo Gallery</h1>
+    <p>A mix of love, light, and moments</p>
+  </header>
+
+  <audio controls autoplay loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <section class="grid">
+    <figure>
+      <img src="photo1.jpeg" alt="Photo 1" />
+      <figcaption>Bright kitchen vibes 🌟</figcaption>
+    </figure>
+    <figure>
+      <img src="photo2.jpeg" alt="Photo 2" />
+      <figcaption>Night lights, bright hearts 💡❤️</figcaption>
+    </figure>
+    <figure>
+      <img src="photo3.jpeg" alt="Photo 3" />
+      <figcaption>Classic black & white moments 🖤</figcaption>
+    </figure>
+  </section>
+
+  <section class="slideshow">
+    <div class="slides">
+      <img src="photo1.jpeg" alt="Slide 1" />
+      <img src="photo2.jpeg" alt="Slide 2" />
+      <img src="photo3.jpeg" alt="Slide 3" />
+    </div>
+  </section>
+
+  <footer>
+    <p>Made with ❤️ by Mugisha</p>
+  </footer>
+</body>
+</html>
